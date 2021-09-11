@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication"
+        mc:Ignorable="d"
+        Title="DirtyFrorm" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+        <GroupBox Width="170pt" Height="290pt" Header="Введите данные о себе" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0 0 20">
+            <StackPanel Orientation="Vertical">
+                <GroupBox Header="Введите имя" Margin="10 10 10 5" Height="50pt">
+                    <TextBox x:Name="nameTextBox" Height="20pt"></TextBox>
+                </GroupBox>
+
+                <GroupBox Header="Введите дату рождения" Margin="10 5 10 10" Height="40pt">
+                    <DatePicker x:Name="dateBirth" Height="20pt"></DatePicker>
+                </GroupBox>
+
+
+                <GroupBox Header="Выберете пол" Margin="10 10 10 10" Height="70pt">
+                    <ListBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="137pt">
+                        <ListBoxItem x:Name="genderM" Height="15pt">Мужской</ListBoxItem>
+                        <ListBoxItem x:Name="genderW" Height="15pt">Женский</ListBoxItem>
+                        <ListBoxItem x:Name="genderO" Height="15pt">Свой вариант</ListBoxItem>
+                    </ListBox>
+                </GroupBox>
+
+                <GroupBox Header="Доп. инфо" Height="70pt" Width="90pt" HorizontalAlignment="Left" Margin="10 0 0 0">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <CheckBox x:Name="goodCB" Height="15pt">Добрый</CheckBox>
+                        <CheckBox x:Name="otzCB" Height="15pt">Отзывчивый</CheckBox>
+                        <CheckBox x:Name="scromCB" Height="15pt">Скромный</CheckBox>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+            <Button x:Name="saveButton" Content="Записать" Width="100pt" HorizontalAlignment="Left" Margin="30 0 0 0"></Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1">
+            <GroupBox Header="Считывание информации" >
+                <StackPanel Orientation="Vertical">
+                <GroupBox Header="Имя">
+                        <Label x:Name="nameLabel" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                </GroupBox>
+                    
+                    <GroupBox Header="Дата рождения">
+                        <Label x:Name="birhdateLabel" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                    </GroupBox>
+                    
+                    <GroupBox Header="Пол">
+                        <Label x:Name="genderLabel" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                    </GroupBox>
+                    
+                    <GroupBox Header="Дополнительная информация" Height="50pt">
+                        <Label x:Name="infLabel" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                    </GroupBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="readButton" Content="Прочитать" Margin="10"></Button>
+                        <Button x:Name="nextButton" Content="Вывести следующую" Margin="10"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
