@@ -81,16 +81,20 @@ namespace WpfApplication
         {
             database = new List<string[]>();
             i = 0;
-            using (StreamReader sr = new StreamReader("base.csv"))
+            if (File.Exists("base.csv"))
             {
-                while (!sr.EndOfStream)
+                using (StreamReader sr = new StreamReader("base.csv"))
                 {
-                    var line = sr.ReadLine();
-                    var data = line.Split(';');
-                    database.Add(data);
+                    while (!sr.EndOfStream)
+                    {
+                        var line = sr.ReadLine();
+                        var data = line.Split(';');
+                        database.Add(data);
+                    }
                 }
+                MessageBox.Show("Данные успешно загружены");
             }
-            MessageBox.Show("Данные успешно загружены");
+            else { MessageBox.Show("Файл с данными отсутствует! Создайте участника!"); }
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
